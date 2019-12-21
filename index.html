@@ -1,0 +1,156 @@
+<script src="js/jQueryv3.4.1.min.js"></script>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<link rel="shortcut icon" type="image/png" href="img/icon.png"/>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jevon Mahoney</title>
+</head>
+<body>
+ 
+<div class="topnav" id="myTopnav">
+  <a style="pointer-events: none; cursor: default;" id="homeclick">JEVON</a>
+  <a id="videoclick" name="VIDEO">VIDEO</a>
+  <a id="installclick" name="INSTALL">INSTALL</a>
+  <a id="testsclick" name="TEST">TEST</a>
+  <a id="liveclick" name="LIVE">LIVE</a>
+  <a id="digitalclick" name="DIGITAL">DIGITAL</a>
+  <a id="aboutclick" name="ABOUT">ABOUT</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="burger()">&#9776;</a>
+</div>
+
+<script>
+
+var fadeinintro=500;
+var fadeout=100;
+var fadeindelay=1000;
+var fadein=2000;
+
+var folder,t,o,x,a,content,header,li,img,images,x,z,val,v1;
+
+var video=document.getElementById('videoclick');
+var install=document.getElementById('installclick');
+var test=document.getElementById('testsclick');
+var live=document.getElementById('liveclick');
+var digital=document.getElementById('digitalclick');
+
+var e = "https://www.youtube.com/embed/"
+
+var vl1 = "XLhYd33ymt8";
+var vl2 = "lZ_WpaERgDw";
+var vl3 = "j40xP9p7ek4";
+var vl4 = "wFVJB0Viy90";
+var vl5 = "21fh68TjXQI";
+var vl6 = "aZ2xGq1oQhQ";
+var vl7 = "qJtjhGrUSPY";
+var vl8 = "magvVP-_eeU";
+var vl9 = "sDWtnVj8-Wc";
+var vl10 = "MwmxdCyXxPo";
+
+
+$(document).ready(function(){
+      $("#home").delay(fadeindelay).fadeIn(fadein);
+      hm=document.createElement('div');hm.id='home';hm.className='home';
+      document.getElementsByTagName('body')[0].appendChild(hm);
+      am=document.createElement('div');am.id='welcome';am.className='welcome';
+      document.getElementsByTagName('body')[0].appendChild(am);
+      $('#home').append('WELCOME');
+      $('#welcome').append('This is part portfolio, part experiment. An ongoing combination of my various generative visual experiments & full body of work then integrated into this dynamically navigated platform. Attempting to create a parallel between the works serendipitus, modular nature to the base framework of the site which houses it and you currently view.');
+      [video,install,test,live,digital].forEach(function(element){
+        element.addEventListener('click',function(){
+          newpage();
+          t=(this.name);o=(this.id);
+          $('#'+t).remove();$('#'+o).delay(fadeindelay).fadeIn(fadein);
+          content=document.createElement('div');content.id=t;content.className=t;
+          document.getElementsByTagName('body')[0].appendChild(content);
+          $('#header').text(t);$('#'+t).delay(fadeindelay).fadeIn(fadein);
+          folder="img/"+t+"/";$.ajax({ 
+            url:folder,success:function(data){
+              $(data).find("a").attr("href",function(i,val){
+                if(val.match(/\.(jpe?g|png|gif)$/)){
+                  li=$('#'+t);
+                  li.each(function(i){
+                    img=$("<img/>");
+                      img.attr({
+                        "src":folder+val,
+                        "id":val,
+                        "alt":"image"+i
+                        })
+                      })
+                      $('#'+t).append(img);
+                    }
+                    imgid=folder+val;
+                  });
+                }
+              })
+            });
+            $('body').on('click','img',function(){
+              newpage();
+              x=(this.id);
+              z=x.replace(/\.[^/.]+$/, "");
+              $('#header').text(z);$('#'+x).delay(fadeindelay).fadeIn(fadein);
+              contentinner=document.createElement('div');contentinner.id=t;contentinner.className=t;
+              document.getElementsByTagName('body')[0].appendChild(contentinner);
+              $('#'+t).delay(fadeindelay).fadeIn(fadein);
+              folder='img/'+t+'/'+z+'/';$.ajax({
+                url:folder,success:function(data){
+                  $(data).find("a").attr("href",function(i,val){
+                    if(val.match(/\.(jpe?g|png|gif)$/)){
+                      li=$('#'+t);
+                      li.each(function(i){
+                        img=$("<img/>");
+                          img.attr({
+                            "src":folder+val,
+                            "id":t+val,
+                            "alt":"image"
+                            });
+                          })
+                          $('#'+t).append(img);
+                        }
+                        imgid=folder+val;
+                      });
+                    }
+                  })
+                  var viloc=t+z,ifrm=document.createElement("iframe");"VIDEO1"==viloc&&ifrm.setAttribute("src",e+vl1),"VIDEO2"==viloc&&ifrm.setAttribute("src",e+vl2),"VIDEO3"==viloc&&ifrm.setAttribute("src",e+vl3),"VIDEO4"==viloc&&ifrm.setAttribute("src",e+vl4),"VIDEO5"==viloc&&ifrm.setAttribute("src",e+vl5),"VIDEO6"==viloc&&ifrm.setAttribute("src",e+vl6),"VIDEO7"==viloc&&ifrm.setAttribute("src",e+vl7),"VIDEO8"==viloc&&ifrm.setAttribute("src",e+vl8),"VIDEO9"==viloc&&ifrm.setAttribute("src",e+vl9),"VIDEO10"==viloc&&ifrm.setAttribute("src",e+vl10);
+                  ifrm.style.width = "40vw";
+                  ifrm.style.height = 'auto';
+                  ifrm.style.border = '0';
+                  $('#'+t).append(ifrm);
+
+                  $(imgid).nextAll().remove();
+                  $(v1).nextAll().remove();
+                })
+              });  
+              $("#aboutclick").click(function() {
+                newpage();
+                t=(this.name);o=(this.id);
+                content=document.createElement('div');content.id=t;content.className=t;
+                document.getElementsByTagName('body')[0].appendChild(content);
+                m=(this.name);
+                $('#header').text(m); $('#'+m).delay(fadeindelay).fadeIn(fadein); $("#about").delay(fadeindelay).fadeIn(fadein);
+                $('#'+t).append('I am a creative, a student & a teacher. Experimenting and polishing new digital techniques in visual art, reactive programming and responsive online content. Whilst undertaking the Research Masters programme in Art: Moving Image at Central St. Martins, University of Arts London & professionally educating in creativity, playful game development and computational development.');
+                 })
+               });
+
+function newpage(){
+  $("#header").remove();
+  $("#welcome,#home,#about,#video,#install,#test,#live,#digital,#header").fadeOut(fadeout);
+  $("#welcome,#home,#about,#video,#install,#test,#live,#digital,#header").remove();
+  header=document.createElement('div');header.id='header';header.className='header';
+  document.getElementsByTagName('body')[0].appendChild(header);
+};
+
+function burger() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+  x.className += " responsive";
+  } else {
+  x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>

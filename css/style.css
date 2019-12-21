@@ -1,0 +1,209 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato2OFLWeb/Lato/fonts/Lato-Medium.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Lato2OFLWeb/Lato/fonts/Lato-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Lato2OFLWeb/Lato/fonts/Lato-Medium.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Lato2OFLWeb/Lato/fonts/Lato-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Lato2OFLWeb/Lato/fonts/Lato-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body{
+  font-family: 'Lato';font-size: 12px;
+  margin: 0;
+  overflow: scroll;
+  width: 100vw;
+  overflow-x: hidden;
+  color: #222;
+}
+
+.t img{
+  pointer-events: none;
+}
+
+.home{
+  font-size: 12pt;
+  position: fixed;
+  height: 50px;
+  top: 48px;
+  margin-left: 30vw;
+  width: 40vw;
+  background-color: #fff;
+  z-index: 2;
+  padding-top: 25px;
+}
+
+.welcome{
+  position: relative;
+  margin: 30vw;
+  margin-top: 125px;
+  width: 40vw;
+}
+
+#v1{
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.about, .video, .install, .test, .live, .digital{
+  position: relative;
+  margin: 30vw;
+  margin-top: 125px;
+  width: 40vw;
+  display: none;
+}
+
+.welcome img, .home img, .install img, .test img, .live img, .video img, .about img, .digital img{
+ width: 40vw;
+ max-width: 750px;
+ min-width: 40vw;
+ margin-bottom: 25px;
+}
+
+.header{
+  font-size: 12pt;
+  position: fixed;
+  height: 50px;
+  top: 48px;
+  margin-left: 30vw;
+  width: 40vw;
+  background-color: #fff;
+  z-index: 2;
+  padding-top: 25px;
+}
+
+.newdiv{
+  background-color: blue;
+  height: 100%;
+  width: 40vw;
+  margin: 30vw;
+  position: relative;
+  margin-top: 125px; 
+}
+
+@media screen and (max-width: 840px) {
+  
+  .about, .video, .install, .test, .live, .digital{
+    position: relative;
+    margin: 10vw;
+    margin-top: 125px;
+    width: 80vw;
+    display: none;
+  }
+
+  .welcome img, .home img, .install img, .test img, .live img, .video img, .about img, .digital img{
+    width: 80vw;
+    max-width: 750px;
+    min-width: 80vw;
+    margin-bottom: 25px;
+  }
+
+  .home, .welcome{
+    font-size: 12pt;
+    position: fixed;
+    height: 50px;
+    top: 48px;
+    margin-left: 10vw;
+    width: 80vw;
+    background-color: #fff;
+    z-index: 2;
+    padding-top: 25px;
+  }
+
+  .header{
+    font-size: 12pt;
+    position: fixed;
+    height: 50px;
+    top: 48px;
+    margin-left: 10vw;
+    width: 80vw;
+    background-color: #fff;
+    z-index: 2;
+    padding-top: 25px;
+  }
+
+  .newdiv{
+    background-color: blue;
+    height: 100%;
+    width: 80vw;
+    margin: 10vw;
+    position: relative;
+    margin-top: 125px; 
+  }
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 4;
+  border-bottom: 2px solid #222;
+  transition: 0.3s;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #222;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12pt;
+  transition: 0.3s;
+}
+
+.topnav:hover {
+  cursor: pointer;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #222;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #222;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 840px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .topnav.responsive {position: fixed;}
+  .topnav.responsive .icon {
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
